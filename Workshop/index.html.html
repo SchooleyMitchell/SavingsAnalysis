@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Cost Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #003366;
+            color: white;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="schooley_mitchell_logo.png" alt="Schooley Mitchell Logo" class="logo">
+        <h2>Annual Cost Analysis</h2>
+        <form id="costForm">
+            <table>
+                <tr>
+                    <th>Expense Category</th>
+                    <th>Estimated Cost ($)</th>
+                    <th>Expense Under Contract</th>
+                    <th>Last Expense Review</th>
+                </tr>
+                <tr><td><b>Compressed Gas</b></td><td style="background-color: #d9eaf7;"><input type="number" id="compressedGas" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractCompressedGas"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewCompressedGas"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+                <tr><td><b>Copiers</b></td><td style="background-color: #d9eaf7;"><input type="number" id="copiers" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractCopiers"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewCopiers"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+                <tr><td><b>Facility Supplies</b></td><td style="background-color: #d9eaf7;"><input type="number" id="facilitySupplies" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractFacilitySupplies"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewFacilitySupplies"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+                <tr><td><b>Fuel</b></td><td style="background-color: #d9eaf7;"><input type="number" id="fuel" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractFuel"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewFuel"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+                <tr><td><b>Merchant Services</b></td><td style="background-color: #d9eaf7;"><input type="number" id="merchantServices" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractMerchantServices"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewMerchantServices"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+                <tr><td><b>Packaging</b></td><td style="background-color: #d9eaf7;"><input type="number" id="packaging" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractPackaging"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewPackaging"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+                <tr><td><b>Shipping</b></td><td style="background-color: #d9eaf7;"><input type="number" id="shipping" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractShipping"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewShipping"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+            <tr><td><b>Telecom</b></td><td style="background-color: #d9eaf7;"><input type="number" id="telecom" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractTelecom"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewTelecom"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr><tr><td><b>Uniforms & Linens</b></td><td style="background-color: #d9eaf7;"><input type="number" id="uniformsLinens" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractUniformsLinens"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewUniformsLinens"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+<tr><td><b>Waste</b></td><td style="background-color: #d9eaf7;"><input type="number" id="waste" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractWaste"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewWaste"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+<tr><td><b>Wireless</b></td><td style="background-color: #d9eaf7;"><input type="number" id="wireless" step="1000" placeholder="$"></td><td style="background-color: #d9eaf7;"><select id="contractWireless"><option value="" selected disabled></option><option value="Yes">Yes</option><option value="No">No</option><option value="Unknown">Unknown</option></select></td><td style="background-color: #d9eaf7;"><select id="reviewWireless"><option value="" selected disabled></option><option value="<1Year"><1 Year</option><option value="2Years">2 Years</option><option value="3Years">3 Years</option><option value=">3Years">> 3 Years</option></select></td></tr>
+</table>
+            
+            <label>Annual Reduction Estimate:
+                <select id="reductionRate">
+                    <option value="0.1">10%</option>
+                    <option value="0.2">20%</option>
+                    <option value="0.3">30%</option>
+                </select>
+            </label>
+            
+            <button type="button" onclick="calculateSavings()">Calculate Savings</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </form>
+        
+        <div class="result" style="text-align: left;">
+            <p>Estimated Annual Spend: $<span id="totalSpend">0</span></p>
+            <p>Annual Reduction Estimate: $<span id="annualReduction">0</span></p>
+            <p>Savings Split (50/50)</p>
+            <p>Client Annual Savings: $<span id="clientSavings">0</span></p>
+            <p>5-Year Client Savings: $<span id="fiveYearSavings">0</span></p>
+        <p><strong>Disclaimer:</strong> This form is for informational purposes only, actual savings require a complete analysis.</p>
+        </div>
+    </div>
+<script>
+    function calculateSavings() {
+        let categories = ["compressedGas", "copiers", "facilitySupplies", "fuel", "merchantServices", "packaging", "shipping", "telecom", "uniformsLinens", "waste", "wireless"];
+        let totalSpend = 0;
+        
+        categories.forEach(category => {
+            let value = parseFloat(document.getElementById(category).value) || 0;
+            totalSpend += value;
+        });
+        
+        let reductionRate = parseFloat(document.getElementById("reductionRate").value);
+        let annualReduction = totalSpend * reductionRate; 
+        let clientSavings = annualReduction * 0.5; 
+        let fiveYearSavings = clientSavings * 5;
+        
+        document.getElementById("totalSpend").innerText = totalSpend.toLocaleString();
+        document.getElementById("annualReduction").innerText = annualReduction.toLocaleString();
+        document.getElementById("clientSavings").innerText = clientSavings.toLocaleString();
+        document.getElementById("fiveYearSavings").innerText = fiveYearSavings.toLocaleString();
+    }
+    
+    function resetForm() {
+        document.getElementById("costForm").reset();
+        document.getElementById("totalSpend").innerText = "0";
+        document.getElementById("annualReduction").innerText = "0";
+        document.getElementById("clientSavings").innerText = "0";
+        document.getElementById("fiveYearSavings").innerText = "0";
+    }
+</script>
+</body>
+</html>
+
